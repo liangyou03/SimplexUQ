@@ -1,0 +1,36 @@
+experiment: smoke_d2_methods
+
+dgp:
+  name: pure_scale
+  K: 3
+  sigma_min: 0.1
+  c: 0.3
+  d_x: 2
+
+data:
+  n_train: 64
+  n_cal: 64
+  n_scale_est: 32
+  n_test: 128
+  n_rep: 3
+
+methods:
+  - global
+  - jackknife_plus
+  - partition
+  - twostage
+  - oneshot
+  - trainres
+  - weighted
+  - oracle
+
+evaluation:
+  alpha: 0.1
+  strata_method: boundary
+  n_strata: 5
+
+weighting:
+  mode: inverse_sigma
+  source: knn_loo
+
+seed: 2026

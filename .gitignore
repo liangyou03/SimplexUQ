@@ -1,0 +1,53 @@
+# Secrets and local settings
+.env
+.env.*
+*.pem
+*.key
+credentials*
+.claude/
+.codex/
+.vscode/
+.idea/
+
+# Environments and generated Python files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.DS_Store
+
+# Data, predictions, checkpoints, and generated outputs
+data/
+results/
+outputs/
+release/
+*.npz
+*.npy
+*.h5ad
+*.h5
+*.rds
+*.pt
+*.pth
+*.pkl
+*.joblib
+*.parquet
+*.jsonl
+*.log
+
+# Private manuscript/review material and deployment infrastructure
+paper/
+manuscript/
+rebuttal/
+deploy/
+temp/
+tmp/
+AGENTS.md
+CLAUDE.md
+EXPERIMENT_LOG*.md

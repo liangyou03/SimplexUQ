@@ -1,0 +1,36 @@
+experiment: d3_discrete_groups_aligned
+
+dgp:
+  name: discrete_groups
+  K: 10
+  sigma_low: 0.08
+  sigma_high: 0.30
+  d_x: 5
+  easy_classes: 5
+
+data:
+  n_train: 500
+  n_cal: 500
+  n_scale_est: 250
+  n_test: 5000
+  n_rep: 200
+
+methods:
+  - global
+  - partition
+  - twostage
+  - fullcp
+  - jackknife_plus
+  - oracle
+
+evaluation:
+  alpha: 0.1
+  strata_method: argmax_group
+  n_strata: 2
+  split_index: 5
+
+weighting:
+  mode: inverse_sigma
+  source: knn_loo
+
+seed: 2026

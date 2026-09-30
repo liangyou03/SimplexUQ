@@ -1,0 +1,32 @@
+experiment: smoke_d4_rotational
+
+dgp:
+  name: model_bias
+  K: 3
+  sigma_min: 0.1
+  c: 0.15
+  d_x: 2
+  bias_scale: 0.45
+  bias_type: rotational
+
+data:
+  n_train: 128
+  n_cal: 128
+  n_scale_est: 64
+  n_test: 1000
+  n_rep: 20
+
+methods:
+  - global
+  - partition
+  - twostage
+  - fullcp
+  - jackknife_plus
+  - oracle
+
+evaluation:
+  alpha: 0.1
+  strata_method: boundary
+  n_strata: 5
+
+seed: 2026

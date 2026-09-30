@@ -1,0 +1,20 @@
+experiment: exp2_6_affective_text
+data:
+  data_dir: data/raw/AffectiveText.Semeval.2007
+  prediction_cache: data/processed/affective_text_predictions.jsonl
+evaluation:
+  alpha: 0.1
+  n_rep: 200
+  cal_frac: 0.4
+  n_strata: 5
+  strata: boundary
+methods:
+  - global
+  - partition
+  - twostage
+  - jackknife_plus
+  - fullcp
+  - oneshot
+  - trainres
+  - weighted
+seed: 2026

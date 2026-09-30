@@ -1,0 +1,29 @@
+experiment: exp1_2_local_repair
+dgp:
+  name: pure_scale
+  K: 3
+  sigma_min: 0.1
+  c: 0.5
+
+data:
+  n_train: 1000      # training set for trainres method
+  n_cal: 1000
+  n_scale_est: 500   # held-out set for two-stage
+  n_test: 5000
+  n_rep: 200
+
+methods:
+  - global
+  - partition
+  - twostage
+  - fullcp
+  - oracle
+  - oneshot
+  - trainres
+
+evaluation:
+  alpha: 0.1
+  strata_method: boundary
+  n_strata: 5
+
+seed: 2026

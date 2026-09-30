@@ -1,0 +1,35 @@
+experiment: d1_homogeneous
+
+dgp:
+  name: pure_scale
+  K: 3
+  sigma_min: 0.2
+  c: 0.0
+  d_x: 2
+
+data:
+  n_train: 1000
+  n_cal: 1000
+  n_scale_est: 500
+  n_test: 5000
+  n_rep: 200
+
+methods:
+  - global
+  - partition
+  - twostage
+  - oneshot
+  - trainres
+  - weighted
+  - oracle
+
+evaluation:
+  alpha: 0.1
+  strata_method: boundary
+  n_strata: 5
+
+weighting:
+  mode: inverse_sigma
+  source: knn_loo
+
+seed: 2026

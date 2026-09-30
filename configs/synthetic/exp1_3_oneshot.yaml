@@ -1,0 +1,22 @@
+experiment: exp1_3_oneshot_instability
+dgp:
+  name: pure_scale
+  K: 3
+  sigma_min: 0.1
+  c: 0.5
+
+data:
+  n_cal: 500
+  n_test: 2000
+  n_rep: 500          # more reps to show instability
+
+methods:
+  - twostage
+  - oneshot
+
+evaluation:
+  alpha: 0.1
+  strata_method: boundary
+  n_strata: 5
+
+seed: 2026

@@ -1,0 +1,22 @@
+experiment: exp1_1_global_disparity
+dgp:
+  name: pure_scale
+  K: 3
+  sigma_min: 0.1
+  c: 0.5
+  
+data:
+  n_train: 0        # no training for synthetic
+  n_cal: 1000
+  n_test: 5000
+  n_rep: 200
+
+methods:
+  - global
+
+evaluation:
+  alpha: 0.1
+  strata_method: boundary    # boundary proximity bins
+  n_strata: 5
+
+seed: 2026

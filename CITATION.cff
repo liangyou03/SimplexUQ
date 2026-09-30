@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the SimplexUQ paper when referring to this benchmark."
+title: "SimplexUQ: An Evaluation Framework and Benchmark for Conformal Uncertainty on Simplex-Valued Predictions"
+type: software
+authors:
+  - family-names: You
+    given-names: Liang
+  - family-names: Shi
+    given-names: Hengyu
+  - family-names: Ou
+    given-names: Dongwen
+repository-code: "https://github.com/liangyou03/SimplexUQ"

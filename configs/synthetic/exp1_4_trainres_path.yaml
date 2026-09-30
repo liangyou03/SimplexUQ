@@ -1,0 +1,21 @@
+experiment: exp1_4_trainres_collapse
+dgp:
+  name: pure_scale
+  K: 3
+  sigma_min: 0.1
+  c: 0.5
+
+data:
+  n_train: 500
+  n_cal: 500
+  n_test: 2000
+  n_rep: 100
+
+trainres_path:
+  axis: krr_lambda              # KRR regularization: small λ = overfit
+  values: [1.0e+0, 1.0e-1, 1.0e-2, 1.0e-3, 1.0e-4, 1.0e-5, 1.0e-6]
+
+evaluation:
+  alpha: 0.1
+
+seed: 2026

@@ -1,0 +1,24 @@
+experiment: exp2_1_bulk_deconv
+
+data:
+  celltype_key: "cell_type"        # PBMC3K standard field
+  n_samples: 5000                  # Total pseudo-bulk samples to generate
+  cells_per_sample: 500            # Cells mixed per sample (higher = lower noise)
+  concentration: 0.5               # Dirichlet parameter (low = skewed mixtures)
+  noise_sd: 0.05                   # Technical noise std dev (log scale)
+
+conformal:
+  alpha: 0.1                       # Miscoverage level
+  n_reps: 200                      # Number of repetitions
+  cal_frac: 0.5                    # Calibration set fraction
+  methods:
+    - global
+    - partition
+    - twostage
+    - fullcp
+
+evaluation:
+  strata_method: boundary          # boundary | entropy | kmeans
+  n_strata: 5                      # Number of strata for stratification
+
+seed: 2026

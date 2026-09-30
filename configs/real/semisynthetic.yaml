@@ -1,0 +1,31 @@
+experiment: real1_semisynthetic_deconv
+data:
+  scrna_ref: data/raw/scrna_reference.h5ad     # to be filled
+  n_pseudospots: 5000
+  n_celltypes: 6
+  mixing_profiles:
+    - name: dominant
+      max_prop: 0.8
+    - name: balanced
+      max_prop: 0.3
+    - name: rare_type
+      rare_frac: 0.05
+
+  n_cal: 1500
+  n_test: 3500
+  n_rep: 100
+
+deconv_model: rctd     # or nnls, scaden, etc.
+
+methods:
+  - global
+  - partition
+  - twostage
+  - oracle
+
+evaluation:
+  alpha: 0.1
+  strata_method: kmeans_ilr
+  n_strata: 5
+
+seed: 2026

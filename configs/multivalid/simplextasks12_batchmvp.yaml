@@ -1,0 +1,81 @@
+experiment: simplextasks12_batchmvp
+seed: 2026
+alpha: 0.10
+
+methods:
+  - Global
+  - Mondrian
+  - BatchMVP
+
+multivalid:
+  num_grid: 1000
+  max_rounds: 1000
+  n_bins: 5
+  dominant_groups: 5
+  min_group_fraction: 0.05
+
+bootstrap:
+  n_resamples: 2000
+  confidence: 0.95
+
+tasks:
+  - id: D1
+    kind: synthetic
+    config: configs/synthetic/d1_homogeneous.yaml
+  - id: D2
+    kind: synthetic
+    config: configs/synthetic/d2_pure_scale.yaml
+  - id: D3
+    kind: synthetic
+    config: configs/synthetic/d3_discrete_groups_aligned.yaml
+  - id: D4
+    kind: synthetic
+    config: configs/synthetic/d4_model_bias.yaml
+  - id: D5
+    kind: synthetic
+    config: configs/synthetic/d5_heavy_tail.yaml
+  - id: D6
+    kind: synthetic
+    config: configs/synthetic/d6_high_k.yaml
+  - id: CIFAR-10
+    kind: real
+    task: release/simplextasks-12/real/cifar10_softmax/task.npz
+    strata: release/upload_bundles/SimplexTasks-12-data/data/derived/cifar10_softmax/strata_entropy.json
+    score: tv
+    n_rep: 50
+    cal_frac: 0.40
+  - id: Topics
+    kind: real
+    task: release/simplextasks-12/real/topics_20ng/task.npz
+    strata: release/upload_bundles/SimplexTasks-12-data/data/derived/topics_20newsgroups/strata_task_default.json
+    score: aitchison
+    n_rep: 50
+    cal_frac: 0.40
+  - id: AffectiveText
+    kind: real
+    task: release/simplextasks-12/real/affectivetext_emotions/task.npz
+    strata: release/upload_bundles/SimplexTasks-12-data/data/derived/affectivetext/strata_task_default.json
+    score: aitchison
+    n_rep: 200
+    cal_frac: 0.40
+  - id: Samson
+    kind: real
+    task: release/simplextasks-12/real/samson_unmixing/task.npz
+    strata: release/upload_bundles/SimplexTasks-12-data/data/derived/samson_unmixing/strata_task_default.json
+    score: aitchison
+    n_rep: 50
+    cal_frac: 0.40
+  - id: PBMC
+    kind: real
+    task: release/simplextasks-12/real/pbmc3k_pseudobulk/task.npz
+    strata: release/upload_bundles/SimplexTasks-12-data/data/derived/pbmc_pseudobulk/strata_boundary.json
+    score: aitchison
+    n_rep: 200
+    cal_frac: 0.40
+  - id: UTKFace
+    kind: real
+    task: release/simplextasks-12/real/utkface_age_ldl/task.npz
+    strata: release/upload_bundles/SimplexTasks-12-data/data/derived/utkface_ldl/strata_task_default.json
+    score: aitchison
+    n_rep: 50
+    cal_frac: 0.40

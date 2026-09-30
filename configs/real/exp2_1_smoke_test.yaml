@@ -1,0 +1,24 @@
+experiment: exp2_1_smoke_test
+
+data:
+  celltype_key: "cell_type"
+  n_samples: 1000                  # Smaller for smoke test
+  cells_per_sample: 500
+  concentration: 0.5
+  noise_sd: 0.05
+
+conformal:
+  alpha: 0.1
+  n_reps: 5                        # Only 5 reps for smoke test
+  cal_frac: 0.5
+  methods:
+    - global
+    - partition
+    - twostage
+    - fullcp
+
+evaluation:
+  strata_method: boundary
+  n_strata: 5
+
+seed: 2026

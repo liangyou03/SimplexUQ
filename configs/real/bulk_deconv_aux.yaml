@@ -1,0 +1,23 @@
+experiment: real_bulk_deconv_aux
+
+data:
+  celltype_key: cell_type
+  n_samples: 5000
+  cells_per_sample: 200
+  concentration: 1.0
+  noise_sd: 0.1
+
+conformal:
+  alpha: 0.1
+  n_reps: 200
+  cal_frac: 0.4
+  methods:
+    - jackknife_plus
+    - oneshot
+    - weighted
+
+evaluation:
+  n_strata: 5
+  strata_method: boundary
+
+seed: 2026

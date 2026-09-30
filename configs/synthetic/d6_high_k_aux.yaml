@@ -1,0 +1,30 @@
+experiment: d6_high_k_aux
+
+dgp:
+  name: high_k
+  K: 50
+  sigma_min: 0.05
+  c: 0.35
+  d_x: 10
+
+data:
+  n_train: 5000
+  n_cal: 5000
+  n_scale_est: 2500
+  n_test: 5000
+  n_rep: 200
+
+methods:
+  - oneshot
+  - trainres
+
+evaluation:
+  alpha: 0.1
+  strata_method: entropy
+  n_strata: 5
+
+weighting:
+  mode: inverse_sigma
+  source: knn_loo
+
+seed: 2026

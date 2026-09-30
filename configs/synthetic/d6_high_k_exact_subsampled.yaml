@@ -1,0 +1,30 @@
+experiment: d6_high_k_exact_subsampled
+
+dgp:
+  name: high_k
+  K: 50
+  sigma_min: 0.05
+  c: 0.35
+  d_x: 10
+
+data:
+  n_train: 500
+  n_cal: 500
+  n_scale_est: 250
+  n_test: 2000
+  n_rep: 200
+
+methods:
+  - fullcp
+  - jackknife_plus
+
+evaluation:
+  alpha: 0.1
+  strata_method: entropy
+  n_strata: 5
+
+weighting:
+  mode: inverse_sigma
+  source: knn_loo
+
+seed: 2026
