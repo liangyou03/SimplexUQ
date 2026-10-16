@@ -3,6 +3,8 @@
 Code for **SimplexUQ: An Evaluation Framework and Benchmark for Conformal
 Uncertainty on Simplex-Valued Predictions**.
 
+> **Please cite:** If you use SimplexUQ or SimplexTasks-12 in your research, please cite our paper: Liang You, Hengyu Shi, and Dongwen Ou. [SimplexUQ: An Evaluation Framework and Benchmark for Conformal Uncertainty on Simplex-Valued Predictions](https://arxiv.org/abs/2610.00523), 2026.
+
 SimplexUQ compares conformal wrappers on six synthetic regimes and six
 fixed-predictor real tasks. It evaluates marginal coverage, prediction-space
 stratified coverage, maximum disparity, worst-stratum coverage, and within-task
